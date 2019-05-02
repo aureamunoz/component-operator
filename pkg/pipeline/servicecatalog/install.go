@@ -135,7 +135,7 @@ func createService(component v1alpha1.Component, config rest.Config, c client.Cl
 	// Update status
 	newComponent.Status.Phase = v1alpha1.PhaseServiceCreation
 	// Add Finalizer to allow the serviceinstance/binding to be deleted when the component will be deleted
-	svcFinalizerName := "service.component.k8s.io"
+	svcFinalizerName := "service.appdev.snowdrop.me"
 	if !ContainsString(newComponent.ObjectMeta.Finalizers, svcFinalizerName) {
 		newComponent.ObjectMeta.Finalizers = append(newComponent.ObjectMeta.Finalizers, svcFinalizerName)
 	}

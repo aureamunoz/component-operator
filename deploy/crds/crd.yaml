@@ -1,9 +1,9 @@
 apiVersion: apiextensions.k8s.io/v1beta1
 kind: CustomResourceDefinition
 metadata:
-  name: components.component.k8s.io
+  name: components.appdev.snowdrop.me
 spec:
-  group: component.k8s.io
+  group: appdev.snowdrop.me
   version: v1alpha1
   names:
     kind: Component

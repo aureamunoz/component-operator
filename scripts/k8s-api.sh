@@ -2,7 +2,7 @@
 
 ENDPOINT=192.168.99.50:8443
 TOKEN=$1
-API=v1beta1/customresourcedefinitions/components.component.k8s.io
+API=v1beta1/customresourcedefinitions/components.appdev.snowdrop.me
 
 
 http --verify=no \

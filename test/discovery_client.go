@@ -73,7 +73,7 @@ func homeDir() string {
 	return os.Getenv("USERPROFILE") // windows
 }
 
-var allowedGroups = []string{"build.openshift.io", "image.openshift.io", "route.openshift.io", "component.k8s.io", "apps", "apps.openshift.io"}
+var allowedGroups = []string{"build.openshift.io", "image.openshift.io", "route.openshift.io", "appdev.snowdrop.me", "apps", "apps.openshift.io"}
 var allowedCoreResources = []string{"pod", "replicationcontrollers", "services"}
 
 func filterGvks(input map[schema.GroupVersionResource]struct{}) []schema.GroupVersionResource {

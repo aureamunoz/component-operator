@@ -1,3 +1,3 @@
 // +k8s:deepcopy-gen=package
-// +groupName=component.k8s.io
+// +groupName=appdev.snowdrop.me
 package v1alpha1

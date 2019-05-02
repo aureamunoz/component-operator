@@ -36,7 +36,7 @@ The deployment or installation of an application in a namespace will consist in 
 [Component API spec](https://github.com/snowdrop/component-operator/blob/master/pkg/apis/component/v1alpha1/component_types.go#L11).
 
 ```bash
-apiVersion: component.k8s.io/v1alpha1
+apiVersion: appdev.snowdrop.me/v1alpha1
 kind: Component
 metadata:
   name: spring-boot-demo
@@ -85,7 +85,7 @@ When this `Custom resource` will be processed by the Kukernetes Api Server and p
 - In a separate terminal create a component's yaml file with the following information
   ```bash
   echo "
-  apiVersion: component.k8s.io/v1alpha1
+  apiVersion: appdev.snowdrop.me/v1alpha1
   kind: Component
   metadata:
     name: my-spring-boot
@@ -114,7 +114,7 @@ When this `Custom resource` will be processed by the Kukernetes Api Server and p
   imagestream.image.openshift.io/dev-runtime-spring-boot   docker-registry.default.svc:5000/demo/dev-runtime-spring-boot   latest    45 seconds ago
   
   NAME                                        RUNTIME       VERSION   SERVICE   TYPE      CONSUMED BY   AGE
-  component.component.k8s.io/my-spring-boot   spring-boot                                               46s
+  component.appdev.snowdrop.me/my-spring-boot   spring-boot                                               46s
   
   NAME                                           STATUS    VOLUME    CAPACITY   ACCESS MODES   STORAGECLASS   AGE
   persistentvolumeclaim/m2-data-my-spring-boot   Bound     pv005     1Gi        RWO                           46s
@@ -204,13 +204,13 @@ Instructions followed to create the Component's CRD, operator using the `operato
 
 - Execute this command within the `$GOPATH/github.com/$ORG/` folder in a terminal
   ```bash
-  operator-sdk new component-operator --api-version=component.k8s.io/v1alpha1 --kind=Component --skip-git-init
-  operator-sdk add api --api-version=component.k8s.io/v1alpha1 --kind=Component 
+  operator-sdk new component-operator --api-version=appdev.snowdrop.me/v1alpha1 --kind=Component --skip-git-init
+  operator-sdk add api --api-version=appdev.snowdrop.me/v1alpha1 --kind=Component 
   ```
   using the following parameters 
 
   Name of the folder to be created : `component-operator`
-  Api Group Name   : `component.k8s.io`
+  Api Group Name   : `appdev.snowdrop.me`
   Api Version      : `v1alpha1`
   Kind of Resource : `Component` 
 
@@ -321,7 +321,7 @@ To clean-up , execute the following commands
 
     oc delete -n openshift-operators subscriptions/component
     oc delete -n openshift-marketplace operatorsource/component-operator
-    oc delete crd/components.component.k8s.io
+    oc delete crd/components.appdev.snowdrop.me
     oc delete -n openshift-operators ClusterServiceVersion/component-operator.v0.10.0
     oc delete -n openshift-marketplace CatalogSourceConfig/installed-custom-openshift-operators 
     oc delete -n openshift-operators deployment/component-operator

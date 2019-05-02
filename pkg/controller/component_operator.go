@@ -45,7 +45,7 @@ import (
 )
 
 const (
-	svcFinalizerName  = "service.component.k8s.io"
+	svcFinalizerName  = "service.appdev.snowdrop.me"
 	controllerName    = "component-controller"
 	deletionOperation = "DELETION"
 	creationOperation = "CREATION"

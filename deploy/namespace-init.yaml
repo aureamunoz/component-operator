@@ -9,7 +9,7 @@ metadata:
   name: component-operator
 rules:
   - apiGroups:
-      - component.k8s.io
+      - appdev.snowdrop.me
     resources:
       - "*"
     verbs:
